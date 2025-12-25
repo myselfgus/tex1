@@ -1,0 +1,138 @@
+%%%%%%%%%%%%%%%%%%%% O Relojoeiro - Formato Springer %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Baseado no template book.tex (Springer Nature)
+%
+%%%%%%%%%%%%%%%% Springer Nature %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% RECOMMENDED %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[graybox,envcountchap,sectrefs]{svmono}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{type1cm}
+
+\usepackage{makeidx}         % allows index generation
+\usepackage{graphicx}        % standard LaTeX graphics tool
+                             % when including figure files
+\usepackage{multicol}        % used for the two-column index
+\usepackage[bottom]{footmisc}% places footnotes at page bottom
+
+\usepackage{newtxtext}       %
+\usepackage[varvw]{newtxmath}       % selects Times Roman as basic font
+
+\makeindex             % used for the subject index
+                       % please use the style svind.ist with
+                       % your makeindex program
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\author{Gustavo Mendes e Silva}
+\title{O Relojoeiro}
+\subtitle{Uma Jornada Através do Tempo}
+\maketitle
+
+\frontmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Dedicatória
+\chapter*{Dedicatória}
+\begin{center}
+\textit{Aos que buscam o tempo,\\e aos que pelo tempo são buscados.}
+\end{center}
+
+%% Prefácio
+\chapter*{Prefácio}
+
+Esta obra nasceu de uma inquietação fundamental: o que é o tempo? Não o tempo dos relógios, não o tempo dos calendários, não o tempo das agendas e compromissos, mas o tempo como substância primordial da existência, como tecido no qual bordamos nossas vidas, como oceano no qual flutuamos desde o nascimento até a morte.
+
+O Relojoeiro é uma alegoria, uma meditação ficcional sobre nossa relação com a temporalidade. Através de sua jornada por paisagens impossíveis --- cidades onde o tempo flui ao contrário, vales onde nada muda, jardins onde memórias são cultivadas como plantas, teatros onde filósofos debatem eternamente, praças onde revoluções explodem contra a tirania dos ponteiros --- exploramos as múltiplas faces daquilo que chamamos, por falta de nome melhor, de tempo.
+
+Cada capítulo representa uma perspectiva diferente, uma tentativa distinta de apreender o inapreensível. Juntos, formam um mosaico incompleto, um quebra-cabeça cujas peças não se encaixam perfeitamente, porque o tempo, em sua essência, resiste a qualquer tentativa de totalização, de sistematização, de domesticação.
+
+\vspace{1cm}
+\begin{flushright}
+\textit{O Autor}
+\end{flushright}
+
+%% Epígrafe
+\chapter*{Epígrafe}
+\begin{center}
+\Large\textit{``O tempo não é o que parece.''}
+\end{center}
+
+\tableofcontents
+
+\mainmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PARTE I - A PARTIDA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\part{A Partida}
+
+\input{capitulos/cap1-relojoeiro}
+
+\input{capitulos/cap2-cidade}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PARTE II - A JORNADA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\part{A Jornada}
+
+\input{capitulos/cap3-vale}
+
+\input{capitulos/cap4-jardim}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PARTE III - A REVELAÇÃO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\part{A Revelação}
+
+\input{capitulos/cap5-teatro}
+
+\input{capitulos/cap6-praca}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PARTE IV - O RETORNO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\part{O Retorno}
+
+\input{capitulos/cap7-horologista}
+
+\backmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Posfácio
+\chapter*{Posfácio}
+
+O leitor que chegou até aqui talvez se pergunte: o que aconteceu com o Relojoeiro? A resposta é simultaneamente simples e complexa: ele se tornou o que sempre foi. Não houve transformação, apenas revelação. Não houve fim, apenas reconhecimento de que nunca houve começo.
+
+A jornada do Relojoeiro é, em última análise, a jornada de todos nós. Nascemos no tempo, vivemos no tempo, morreremos no tempo. E no entanto, carregamos dentro de nós uma centelha de eternidade, uma intuição de totalidade que nos impede de aceitar completamente nossa condição finita, nossa existência fragmentada, nossa consciência sequencial.
+
+Esta obra não pretende oferecer respostas. Pretende, isso sim, formular perguntas de maneira mais precisa, mais honesta, mais corajosa. Porque no fim --- se é que existe um fim --- não são as respostas que nos definem, mas as perguntas que ousamos fazer.
+
+\vspace{1cm}
+\begin{flushright}
+\textit{Gustavo Mendes e Silva}\\
+\textit{2025}
+\end{flushright}
+
+%% Sobre o Autor
+\chapter*{Sobre o Autor}
+
+\textbf{Gustavo Mendes e Silva} é escritor e pensador brasileiro. Suas obras exploram as fronteiras entre ficção e filosofia, narrativa e meditação, literatura e vida. \textit{O Relojoeiro} representa sua tentativa mais ambiciosa de capturar em palavras aquilo que, por natureza, escapa a qualquer captura.
+
+\vfill
+
+\begin{center}
+\copyright{} 2025 Gustavo Mendes e Silva. Todos os direitos reservados.
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

@@ -1,0 +1,177 @@
+% O Relojoeiro - Formato Memoir (Livro de Ficção)
+% Baseado no template main.tex
+
+% universal settings
+\documentclass[smalldemyvopaper,11pt,twoside,onecolumn,openright,extrafontsizes]{memoir}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[osf]{Alegreya,AlegreyaSans}
+
+% PACKAGE DEFINITION
+% typographical packages
+\usepackage{microtype} % for micro-typographical adjustments
+\usepackage{setspace} % for line spacing
+\usepackage{lettrine} % for drop caps and awesome chapter beginnings
+\usepackage{titlesec} % for manipulation of chapter titles
+
+% other
+\usepackage{calc}
+\usepackage{hologo}
+\usepackage[hidelinks]{hyperref}
+
+% PHYSICAL DOCUMENT SETUP
+% media settings
+\setstocksize{8.5in}{5.675in}
+\settrimmedsize{8.5in}{5.5in}{*}
+\setbinding{0.175in}
+\setlrmarginsandblock{0.611in}{1.222in}{*}
+\setulmarginsandblock{0.722in}{1.545in}{*}
+
+% defining the title and the author
+\title{O Relojoeiro}
+\author{Gustavo Mendes e Silva}
+\newcommand{\ISBN}{000-00-0000-000-0}
+\newcommand{\press}{Edição do Autor}
+
+% custom second title page
+\makeatletter
+\newcommand*\halftitlepage{\begingroup % Misericords, T&H p 153
+  \setlength\drop{0.1\textheight}
+  \begin{center}
+  \vspace*{\drop}
+  \rule{\textwidth}{0in}\par
+  {\Large\textsc\thetitle\par}
+  \rule{\textwidth}{0in}\par
+  \vfill
+  \end{center}
+\endgroup}
+\makeatother
+
+% custom title page
+\thispagestyle{empty}
+\makeatletter
+\newlength\drop
+\newcommand*\titleM{\begingroup % Misericords, T&H p 153
+  \setlength\drop{0.15\textheight}
+  \begin{center}
+  \vspace*{\drop}
+  \rule{\textwidth}{0in}\par
+  {\HUGE\textsc\thetitle\par}
+  \rule{\textwidth}{0in}\par
+  {\Large\textit\theauthor\par}
+  \vfill
+  {\Large\scshape\press}
+  \end{center}
+\endgroup}
+\makeatother
+
+% chapter title manipulation
+% padding with zero
+\renewcommand*\thechapter{\ifnum\value{chapter}<10 0\fi\arabic{chapter}}
+% chapter title display
+\titleformat
+{\chapter}
+[display]
+{\normalfont\scshape\huge}
+{\HUGE\thechapter\centering}
+{0pt}
+{\vspace{18pt}\centering}[\vspace{42pt}]
+
+% typographical settings for the body text
+\setlength{\parskip}{0em}
+\linespread{1.09}
+
+% HEADER AND FOOTER MANIPULATION
+  % for normal pages
+  \nouppercaseheads
+  \headsep = 0.16in
+  \makepagestyle{mystyle}
+  \setlength{\headwidth}{\dimexpr\textwidth+\marginparsep+\marginparwidth\relax}
+  \makerunningwidth{mystyle}{\headwidth}
+  \makeevenhead{mystyle}{}{\textsf{\scriptsize\scshape\thetitle}}{}
+  \makeoddhead{mystyle}{}{\textsf{\scriptsize\scshape\leftmark}}{}
+  \makeevenfoot{mystyle}{}{\textsf{\scriptsize\thepage}}{}
+  \makeoddfoot{mystyle}{}{\textsf{\scriptsize\thepage}}{}
+  \makeatletter
+  \makepsmarks{mystyle}{%
+  \createmark{chapter}{left}{nonumber}{\@chapapp\ }{.\ }}
+  \makeatother
+  % for pages where chapters begin
+  \makepagestyle{plain}
+  \makerunningwidth{plain}{\headwidth}
+  \makeevenfoot{plain}{}{}{}
+  \makeoddfoot{plain}{}{}{}
+  \pagestyle{mystyle}
+% END HEADER AND FOOTER MANIPULATION
+
+% table of contents customisation
+\renewcommand\contentsname{\normalfont\scshape Sumário}
+\renewcommand\cftchapterfont{\normalfont}
+\renewcommand{\cftchapterpagefont}{\normalfont}
+\renewcommand{\printtoctitle}{\centering\Huge}
+
+% layout check and fix
+\checkandfixthelayout
+\fixpdflayout
+
+% BEGIN THE DOCUMENT
+\begin{document}
+\pagestyle{empty}
+
+% the half title page
+\halftitlepage
+\cleardoublepage
+
+% the title page
+\titleM
+\clearpage
+
+% copyright page
+\noindent{\small{Esta é uma obra de ficção. Os nomes, personagens e incidentes retratados são produto da imaginação do autor. Qualquer semelhança com pessoas reais, vivas ou mortas, ou eventos e localidades é inteiramente coincidental.\par\vfill\noindent Primeira Edição\space\today\\ISBN\space\ISBN\\\copyright\space\theauthor. Todos os direitos reservados.\par\vfill\noindent\theauthor\space afirma o direito moral de ser identificado como autor desta obra. Todos os direitos reservados em todas as mídias. Nenhuma parte desta publicação pode ser reproduzida, armazenada em sistema de recuperação ou transmitida de qualquer forma ou por qualquer meio, eletrônico, mecânico, fotocópia, gravação ou outro, sem a prévia autorização por escrito do autor e/ou do editor.\par}}
+\clearpage
+
+% dedication
+\begin{center}
+\itshape{\noindent{Aos que buscam o tempo,\\e aos que pelo tempo são buscados.}}
+\end{center}
+
+% begin front matter
+\frontmatter
+\pagestyle{mystyle}
+
+% epigraph
+\chapter*{Epígrafe}
+\begin{center}
+\textit{``O tempo não é o que parece.''}
+\end{center}
+
+% table of contents
+\clearpage
+\tableofcontents*
+
+% begin main matter
+\mainmatter
+
+% Parte I - A Partida
+\part{A Partida}
+\include{capitulos/cap1-relojoeiro}
+\include{capitulos/cap2-cidade}
+
+% Parte II - A Jornada
+\part{A Jornada}
+\include{capitulos/cap3-vale}
+\include{capitulos/cap4-jardim}
+
+% Parte III - A Revelação
+\part{A Revelação}
+\include{capitulos/cap5-teatro}
+\include{capitulos/cap6-praca}
+
+% Parte IV - O Retorno
+\part{O Retorno}
+\include{capitulos/cap7-horologista}
+
+% begin back matter
+
+\end{document}
+% END THE DOCUMENT
